@@ -2,7 +2,7 @@
 'RCET 0265
 'AccumulateMessageFunction
 'Fall 2020
-'
+'https://github.com/IanGunter/Acummulate-Messages-Function.git
 
 
 
@@ -16,24 +16,25 @@ Option Compare Text
 Module AccumulateMessageFunction
 
     Sub Main()
-        Dim userinput As String
-        Dim callallInput As String
-        Dim Clear As Boolean
+        Dim userInput As String
+        Dim message As String
+        Dim clear As Boolean
 
-        Console.WriteLine("Type a phrase you want to save.")
+        Console.WriteLine("Type a phrase you want to save." & vbNewLine & "Type Call to see all saved phrases." & vbNewLine & "Type Clear to delete saved phrases.")
 
         Do
-            userinput = Console.ReadLine()
-            If userinput = "Call" Then
-                MsgBox(callallInput)
-            ElseIf userinput = "Clear" Then
-                Clear = True
+            userInput = Console.ReadLine()
+            If userInput = "Call" Then
+                'MsgBox pulls up a message box window with the users saved input presented.
+                MsgBox(message)
+            ElseIf userInput = "Clear" Then
+                clear = True
             End If
 
-            callallInput = AccumulateMessage(userinput, Clear)
+            message = AccumulateMessage(userinput, Clear)
 
 
-            Clear = False
+            clear = False
         Loop
 
 
@@ -41,10 +42,11 @@ Module AccumulateMessageFunction
 
     End Sub
 
-
+    'Function Accumulate Message takes input from the user and stores it. When new input is produced by the user, the function adds the new input to a new line.
     Function AccumulateMessage(ByVal newMessage As String, ByVal clear As Boolean) As String
         Static userMessage As String
 
+        'Clear used to delete all saved phrases.
         If clear = True Then
             userMessage = ""
         ElseIf newMessage = "call" Then
