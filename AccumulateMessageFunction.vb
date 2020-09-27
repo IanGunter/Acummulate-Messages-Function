@@ -3,14 +3,14 @@
 'AccumulateMessageFunction
 'Fall 2020
 'https://github.com/IanGunter/Acummulate-Messages-Function.git
-
-
+'Solution name should be PascalCase - TJR
+'Remove extra blank lines - TJR
 
 Option Strict On
 Option Explicit On
 Option Compare Text
 
-
+'Remove extra blank lines - TJR
 
 
 Module AccumulateMessageFunction
@@ -38,7 +38,7 @@ Module AccumulateMessageFunction
         Loop
 
 
-
+        'Remove extra blank lines - TJR
 
     End Sub
 
@@ -51,7 +51,7 @@ Module AccumulateMessageFunction
             userMessage = ""
         ElseIf newMessage = "call" Then
         Else
-            userMessage &= newMessage & vbNewLine
+            userMessage &= newMessage & vbNewLine ' how would you prevent empty strings from adding a new line?? - TJR
         End If
 
         Return userMessage
